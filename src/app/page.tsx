@@ -1,13 +1,15 @@
+import InvoiceCard from "@/components/InvoiceCard";
 import ThemeToggle from "@/components/ThemeToggle";
+import { invoices } from "@/data/invoices";
 
 export default function Home() {
   return (
-    <div className="max-w-5xl mx-auto">
+    <div className="max-w-5xl mx-auto space-y-4">
       <h1 className="text-2xl font-bold">Invoices</h1>
 
-      <p className="text-gray-500 dark:text-gray-400">
-        There is nothing here yet.
-      </p>
+      {invoices.map((invoice) => (
+        <InvoiceCard key={invoice.id} invoice={invoice} />
+      ))}
     </div>
   );
 }
