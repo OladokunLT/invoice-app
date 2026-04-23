@@ -8,7 +8,13 @@ export default function Sidebar() {
     <aside className="bg-[#1E2139] text-white flex md:flex-col items-center justify-between md:justify-start md:w-24 w-full h-20 md:h-screen md:rounded-tr-[20px] md:rounded-br-[20px]">
       {/* Logo */}
       <div className="w-20 h-20 md:w-full md:h-24 flex items-center justify-center rounded-r-2xl md:rounded-none">
-        <Image src="/images/logo.png" alt="Logo" width={100} height={100} />
+        <Image
+          src="/images/logo.png"
+          alt="Logo"
+          width={100}
+          height={100}
+          priority
+        />
       </div>
 
       {/* spacer */}

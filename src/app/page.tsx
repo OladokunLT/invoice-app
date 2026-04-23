@@ -2,13 +2,16 @@
 
 import { useState } from "react";
 import InvoiceCard from "@/components/InvoiceCard";
-import { invoices } from "@/data/invoices";
+import { useInvoices } from "@/context/InvoiceContext";
 import Filter from "@/components/Filter";
 import { InvoiceStatus } from "@/types/invoice";
 import Image from "next/image";
 
 export default function Home() {
   const [selected, setSelected] = useState<InvoiceStatus[]>([]);
+  const { invoices, loading } = useInvoices();
+
+  if (loading) return <p>Loading...</p>;
 
   const filtered =
     selected.length === 0
