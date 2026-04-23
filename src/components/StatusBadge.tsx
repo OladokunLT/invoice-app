@@ -1,16 +1,23 @@
 import { InvoiceStatus } from "@/types/invoice";
 
-export default function ({ status }: { status: InvoiceStatus }) {
-  const styles = {
-    draft: "bg-gray-400 text-gray-900",
-    pending: "bg-yellow-400 text-yellow-900",
-    paid: "bg-green-400 text-green-900",
-  };
+const styles = {
+  draft: "bg-gray-200 text-gray-600",
+  pending: "bg-yellow-200 text-yellow-700",
+  paid: "bg-green-200 text-green-700",
+};
 
+const dot = {
+  draft: "bg-gray-500",
+  pending: "bg-yellow-500",
+  paid: "bg-green-500",
+};
+
+export default function StatusBadge({ status }: { status: InvoiceStatus }) {
   return (
     <span
-      className={`px-3 py-1 rounded-full text-sm font-medium capitalize ${styles[status]}`}
+      className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium capitalize ${styles[status]}`}
     >
+      <span className={`w-2 h-2 rounded-full ${dot[status]}`} />
       {status}
     </span>
   );

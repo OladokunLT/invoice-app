@@ -1,6 +1,7 @@
 import { Invoice } from "@/types/invoice";
 import StatusBadge from "./StatusBadge";
 import Link from "next/link";
+import { formatCurrency, formatDate } from "@/utils/format";
 
 export default function InvoiceCard({ invoice }: { invoice: Invoice }) {
   return (
@@ -27,11 +28,15 @@ export default function InvoiceCard({ invoice }: { invoice: Invoice }) {
         <div className="hidden md:flex items-center justify-between gap-4">
           <h2 className="font-bold w-1/6">#{invoice.id}</h2>
 
-          <span className="text-gray-500 w-1/5">{invoice.date}</span>
+          <span className="text-gray-500 w-1/5">
+            Due {formatDate(invoice.date)}
+          </span>
 
           <span className="text-gray-500 w-1/4">{invoice.clientName}</span>
 
-          <span className="font-bold w-1/5 text-right">£ {invoice.total}</span>
+          <span className="font-bold w-1/5 text-right">
+            £ {formatCurrency(invoice.total)}
+          </span>
 
           <div className="w-1/6 flex justify-end">
             <StatusBadge status={invoice.status} />

@@ -67,10 +67,11 @@ export default function Home() {
             height={200}
           />
 
-          <h2 className="mt-6 text-xl font-bold">There is nothing here</h2>
+          <h2 className="mt-8 text-xl font-bold">There is nothing here</h2>
 
-          <p className="text-gray-500 dark:text-gray-400 max-w-sm">
-            Create an invoice by clicking the New Invoice button and get started
+          <p className="text-gray-500 dark:text-gray-400 max-w-sm mt-2">
+            Create an invoice by clicking the <strong>New</strong> button and
+            get started
           </p>
         </div>
       )}
