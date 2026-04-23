@@ -3,10 +3,15 @@
 import StatusBadge from "@/components/StatusBadge";
 import { useInvoices } from "@/context/InvoiceContext";
 import { useRouter } from "next/navigation";
+import { useEffect, useState, useRef } from "react";
+import Modal from "@/components/Modal";
+import Link from "next/link";
 
 export default function InvoiceDetailClient({ id }: { id: string }) {
+  const [showModal, setShowModal] = useState(false);
   const { invoices, markAsPaid, deleteInvoice, loading } = useInvoices();
   const router = useRouter();
+  const ref = useRef<HTMLButtonElement>(null);
 
   if (loading) return <p>Loading...</p>;
 
@@ -26,9 +31,14 @@ export default function InvoiceDetailClient({ id }: { id: string }) {
         </div>
 
         <div className="flex gap-3">
-          <button className="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded">
+          {/* <button className="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded">
             Edit
-          </button>
+          </button> */}
+          <Link href={`/invoice/${invoice.id}/edit`}>
+            <button className="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded">
+              Edit
+            </button>
+          </Link>
 
           <button
             onClick={() => markAsPaid(invoice.id)}
@@ -39,10 +49,7 @@ export default function InvoiceDetailClient({ id }: { id: string }) {
           </button>
 
           <button
-            onClick={() => {
-              deleteInvoice(invoice.id);
-              router.push("/");
-            }}
+            onClick={() => setShowModal(true)}
             className="px-4 py-2 bg-red-500 text-white rounded"
           >
             Delete
@@ -80,6 +87,35 @@ export default function InvoiceDetailClient({ id }: { id: string }) {
           <span className="font-bold">£ {invoice.total}</span>
         </div>
       </div>
+
+      {/* Modal */}
+      <Modal open={showModal} onClose={() => setShowModal(false)}>
+        <h2 className="text-xl font-bold mb-4">Confirm Deletion</h2>
+
+        <p className="text-gray-500 mb-6">
+          Are you sure you want to delete invoice #{invoice.id}? This action
+          cannot be undone.
+        </p>
+
+        <div className="flex justify-end gap-3">
+          <button
+            onClick={() => setShowModal(false)}
+            className="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded"
+          >
+            Cancel
+          </button>
+
+          <button
+            onClick={() => {
+              deleteInvoice(invoice.id);
+              router.push("/");
+            }}
+            className="px-4 py-2 bg-red-500 text-white rounded"
+          >
+            Delete
+          </button>
+        </div>
+      </Modal>
     </div>
   );
 }

@@ -10,6 +10,8 @@ interface InvoiceContextType {
   markAsPaid: (id: string) => void;
   deleteInvoice: (id: string) => void;
   loading: boolean;
+  addInvoice: (invoice: Invoice) => void;
+  updateInvoice: (invoice: Invoice) => void;
 }
 
 const InvoiceContext = createContext<InvoiceContextType | null>(null);
@@ -52,9 +54,27 @@ export const InvoiceProvider = ({
     setInvoices((prev) => prev.filter((inv) => inv.id !== id));
   };
 
+  const addInvoice = (invoice: Invoice) => {
+    setInvoices((prev) => [invoice, ...prev]);
+  };
+
+  const updateInvoice = (updated: Invoice) => {
+    setInvoices((prev) =>
+      prev.map((inv) => (inv.id === updated.id ? updated : inv)),
+    );
+  };
+
   return (
     <InvoiceContext.Provider
-      value={{ invoices, setInvoices, markAsPaid, deleteInvoice, loading }}
+      value={{
+        invoices,
+        setInvoices,
+        markAsPaid,
+        deleteInvoice,
+        addInvoice,
+        updateInvoice,
+        loading,
+      }}
     >
       {children}
     </InvoiceContext.Provider>
