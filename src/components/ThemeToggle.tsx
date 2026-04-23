@@ -1,6 +1,7 @@
 "use client";
 
 import { useTheme } from "@/context/ThemeContext";
+import Image from "next/image";
 
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();

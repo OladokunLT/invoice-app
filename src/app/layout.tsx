@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { League_Spartan } from "next/font/google";
 import { ThemeProvider } from "@/context/ThemeContext";
+import Sidebar from "@/components/Sidebar";
 
 const leagueSpartan = League_Spartan({
   variable: "--font-league",
@@ -21,7 +22,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={leagueSpartan.variable}>
       <body className="font-sans bg-white text-black dark:bg-[#141625] dark:text-white transition-colors">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <div className="flex flex-col md:flex-row min-h-screen">
+            {/* Sidebar */}
+            <Sidebar />
+
+            {/* Main content */}
+            <main className="flex-1 p-6 md:p-10">{children}</main>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

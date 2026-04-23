@@ -2,10 +2,12 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-4">
-      <h1 className="text-2xl font-bold">Invoice App — Theme Ready 🚀</h1>
+    <div className="max-w-5xl mx-auto">
+      <h1 className="text-2xl font-bold">Invoices</h1>
 
-      <ThemeToggle />
-    </main>
+      <p className="text-gray-500 dark:text-gray-400">
+        There is nothing here yet.
+      </p>
+    </div>
   );
 }
