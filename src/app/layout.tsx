@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={leagueSpartan.variable}>
-      <body className="font-sans bg-white text-black dark:bg-[#141625] dark:text-white transition-colors">
+      <body className="font-sans bg-white/90 text-black dark:bg-[#141625] dark:text-white transition-colors">
         <ThemeProvider>
           <InvoiceProvider>
             <div className="flex flex-col md:flex-row min-h-screen">

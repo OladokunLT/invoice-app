@@ -55,8 +55,10 @@ export default function Home() {
 
       {/* List */}
       {filtered.length > 0 ? (
-        filtered.map((invoice) => (
-          <InvoiceCard key={invoice.id} invoice={invoice} />
+        filtered.map((invoice, index) => (
+          <div className="flex flex-col gap-2" key={index}>
+            <InvoiceCard key={invoice.id} invoice={invoice} />
+          </div>
         ))
       ) : (
         <div className="flex flex-col items-center justify-center text-center mt-20">
