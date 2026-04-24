@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Invoice Management App
 
-## Getting Started
+## 🚀 Live Demo
 
-First, run the development server:
+[https://invoice-app-azure-one.vercel.app](https://invoice-app-azure-one.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📦 GitHub Repo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[https://github.com/oladokunLT/invoice-app](https://github.com/oladokunLT/invoice-app)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧠 Overview
 
-## Learn More
+This is a full-featured Invoice Management Application built with Next.js, TypeScript, and TailwindCSS.
 
-To learn more about Next.js, take a look at the following resources:
+Users can:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Create invoices
+- Edit invoices
+- Delete invoices
+- Save drafts
+- Mark invoices as paid
+- Filter by status
+- Toggle light/dark mode
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🏗️ Architecture
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Next.js App Router
+- Context API for global state
+- LocalStorage for persistence
+- Reusable components (Form, Modal, Card, Badge)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ⚙️ Tech Stack
+
+- Next.js
+- TypeScript
+- TailwindCSS
+- React Context API
+
+---
+
+## 📱 Features Implemented
+
+### CRUD
+
+- Create, Read, Update, Delete invoices
+
+### Status System
+
+- Draft
+- Pending
+- Paid
+
+### Filtering
+
+- Filter invoices by status
+
+### Theme
+
+- Light/Dark mode with persistence
+
+### Responsive Design
+
+- Mobile, tablet, desktop support
+
+### Accessibility
+
+- Keyboard accessible modal
+- ESC key support
+- Semantic buttons
+
+---
+
+## ⚠️ Trade-offs
+
+- Used LocalStorage instead of backend for simplicity
+- Validation
+
+---
+
+## 🚀 Future Improvements
+
+- Backend integration (Node/Express or Firebase)
+- Better form validation (React Hook Form + Zod)
+
+---
+
+## 👨‍💻 Author
+
+Lukman Tunde OLADOKUN
