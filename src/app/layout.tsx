@@ -22,15 +22,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={leagueSpartan.variable}>
-      <body className="font-sans bg-white/90 text-black dark:bg-[#141625] dark:text-white transition-colors">
+      <body className="font-sans bg-[#F8F8FB] text-black dark:bg-[#141625] dark:text-white transition-colors">
         <ThemeProvider>
           <InvoiceProvider>
-            <div className="flex flex-col md:flex-row min-h-screen">
+            <div className="max-w-360 mx-auto flex flex-col md:flex-row min-h-screen">
               {/* Sidebar */}
               <Sidebar />
 
               {/* Main content */}
-              <main className="flex-1 p-6 md:p-10">{children}</main>
+              <main className="md:max-w-182.5 md:mx-auto flex-1 p-6 md:p-10">
+                {children}
+              </main>
+              {/* <main className="lg:ml-28 p-6 max-w-5xl mx-auto">{children}</main> */}
             </div>
           </InvoiceProvider>
         </ThemeProvider>
