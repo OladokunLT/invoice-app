@@ -5,7 +5,7 @@ import ThemeToggle from "./ThemeToggle";
 
 export default function Sidebar() {
   return (
-    <aside className="bg-[#1E2139] text-white flex md:flex-col items-center justify-between md:justify-start md:w-24 w-full h-20 md:h-screen md:rounded-tr-[20px] md:rounded-br-[20px]">
+    <aside className="bg-[#1E2139] text-white flex md:flex-col items-center justify-between md:justify-start md:w-24 w-full h-20 md:min-h-screen md:rounded-tr-[20px] md:rounded-br-[20px] md:fixed">
       {/* Logo */}
       <div className="w-20 h-20 md:w-full md:h-24 flex items-center justify-center rounded-r-2xl md:rounded-none">
         <Image

@@ -12,17 +12,17 @@ export default function InvoiceCard({ invoice }: { invoice: Invoice }) {
         <div className="md:hidden space-y-3">
           <div className="flex justify-between items-center">
             <h2 className="font-bold">#{invoice.id}</h2>
-            <p className="text-[#858BB2] font-medium dark:text-gray-400">
+            <p className="text-secondary font-medium dark:text-gray-400">
               {invoice.clientName}
             </p>
           </div>
 
           <div className="flex justify-between items-center">
             <div className="flex flex-col items-start gap-1">
-              <p className="text-sm text-[#858BB2] font-medium">
+              <p className="text-sm text-secondary font-medium">
                 Due {formatDate(invoice.date)}
               </p>
-              <p className="font-bold ">£ {formatCurrency(invoice.total)}</p>
+              <p className="font-bold ">{formatCurrency(invoice.total)}</p>
             </div>
             <StatusBadge status={invoice.status} />
           </div>
@@ -31,15 +31,15 @@ export default function InvoiceCard({ invoice }: { invoice: Invoice }) {
         {/* DESKTOP / TABLET LAYOUT */}
         <div className="hidden md:flex items-center justify-between gap-4">
           <h2 className="font-bold w-1/6">
-            <span className="text-[#858BB2]">#</span>
+            <span className="text-secondary">#</span>
             {invoice.id}
           </h2>
 
-          <span className="text-[#858BB2] font-medium w-1/5">
+          <span className="text-secondary font-medium w-1/5">
             Due {formatDate(invoice.date)}
           </span>
 
-          <span className="text-[#858BB2] font-medium w-1/4">
+          <span className="text-secondary font-medium w-1/4">
             {invoice.clientName}
           </span>
 

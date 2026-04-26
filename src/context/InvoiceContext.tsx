@@ -28,7 +28,15 @@ export const InvoiceProvider = ({
   useEffect(() => {
     const stored = localStorage.getItem("invoices");
     if (stored) {
-      setInvoices(JSON.parse(stored));
+      const parsed = JSON.parse(stored);
+
+      // merge new data
+      const merged = parsed.map((inv: any) => ({
+        ...initialData.find((i) => i.id === inv.id),
+        ...inv,
+      }));
+
+      setInvoices(merged);
     } else {
       setInvoices(initialData);
     }
