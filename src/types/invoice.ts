@@ -15,4 +15,16 @@ export interface Invoice {
   total: number;
   status: InvoiceStatus;
   items: InvoiceItem[];
+  createdAt?: string;
+  paymentDue?: string;
+  description?: string;
+  senderAddress?: Address;
+  clientAddress?: Address;
+}
+
+export interface Address {
+  street: string;
+  city: string;
+  postCode: string;
+  country: string;
 }

@@ -1,2 +1,26 @@
 @config "../../tailwind.config.ts";
 @import "tailwindcss";
+
+/* .btn-primary {
+  @apply bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full transition;
+} */
+
+.btn-edit {
+  @apply bg-[#F9FAFE] hover:bg-[#DFE3FA] text-[#7E88C3] dark:bg-[#252945] dark:hover:bg-[#FFFFFF] dark:text-[#DFE3FA] dark:hover:text-[#DFE3FA] px-6 py-4 rounded-3xl transition cursor-pointer text-[15px] font-bold leading-3.75;
+}
+
+.btn-primary {
+  @apply bg-[#7C5DFA] hover:bg-[#9277FF] text-white text-[15px] font-bold leading-3.75 px-6 py-4 rounded-3xl transition cursor-pointer;
+}
+
+.btn-delete {
+  @apply bg-[#EC5757] hover:bg-[#FF9797] text-white text-[15px] font-bold leading-3.75 px-6 py-4 rounded-3xl transition cursor-pointer;
+}
+
+.btn-draft {
+  @apply bg-[#373B53] hover:bg-[#0C0E16] text-[#888EB0] dark:bg-[#373B53] dark:hover:bg-[#1E2139] dark:text-[#DFE3FA] dark:hover:text-[#DFE3FA] px-6 py-2 rounded-3xl transition cursor-pointer text-[15px] font-bold leading-3.75;
+}
+
+.text-secondary {
+  @apply text-[#7E88C3] dark:text-[#DFE3FA] text-[13px] font-medium leading-4.5;
+}

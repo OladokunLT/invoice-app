@@ -20,20 +20,22 @@ export default function Home() {
       : invoices.filter((inv) => selected.includes(inv.status));
 
   return (
-    <div className="max-w-5xl mx-auto space-y-6">
+    <div className=" space-y-6">
       {/* Header */}
-      {/* <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Invoices</h1>
-        <Filter selected={selected} setSelected={setSelected} />
-      </div> */}
+
       <div className="flex justify-between items-center">
         {/* Left */}
         <div>
-          <h1 className="text-2xl font-bold">Invoices</h1>
-          <p className="text-gray-500 dark:text-gray-400">
+          <h1 className="text-2xl font-medium md:font-bold">Invoices</h1>
+          <p className="text-gray-500 dark:text-gray-400 md:hidden">
             {invoices.length === 0
               ? "No invoices"
-              : `There are ${invoices.length} invoices`}
+              : `${invoices.length} invoices`}
+          </p>
+          <p className="text-gray-500 dark:text-gray-400 hidden md:inline">
+            {invoices.length === 0
+              ? "No invoices"
+              : `There are ${invoices.length} total invoices`}
           </p>
         </div>
 
@@ -42,8 +44,8 @@ export default function Home() {
           <Filter selected={selected} setSelected={setSelected} />
 
           <Link href="/new">
-            <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full flex items-center gap-2 transition">
-              <span className="bg-white text-purple-600 w-6 h-6 flex items-center justify-center rounded-full">
+            <button className="bg-[#7C5DFA] hover:bg-[#9277FF] text-white px-2 py-2 rounded-3xl flex items-center gap-2 transition cursor-pointer font-medium pr-4">
+              <span className="bg-white text-[#7C5DFA] hover:text-[#9277FF] w-8 h-8 flex items-center justify-center rounded-full pt-1 font-medium text-2xl">
                 +
               </span>
               <span className="hidden sm:inline">New Invoice</span>
